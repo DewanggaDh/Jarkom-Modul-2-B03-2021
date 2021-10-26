@@ -12,3 +12,5 @@ Client : Loguetown dan Alabasta
 EniesLobby
 
 ## Soal 8
+
+![image](https://user-images.githubusercontent.com/73766205/138904419-4df1de5f-4dfd-44d2-90fa-30f9cd09f3bb.png)
