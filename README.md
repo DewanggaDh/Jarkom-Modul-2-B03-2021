@@ -15,9 +15,11 @@ Semua terhubung ke Foosha
 
 ![image](https://user-images.githubusercontent.com/73766205/138793004-d861d30f-7c81-4be9-9225-b33fd2743879.png)
 
-2. Membuat situs www.franky.b03.com
+2. Membuat situs domain www.franky.b03.com
+3. Membuat subdomain www.super.franky.b03.com
+4. Membuat reverse domain utama
 
-### EniesLobby(Master)
+### EniesLobby
 
 ![messageImage_1635433392534](https://user-images.githubusercontent.com/73766205/139292599-448ee484-a9ee-4e36-a692-12806f5e11e7.jpg)
 
@@ -26,6 +28,8 @@ Semua terhubung ke Foosha
 ![messageImage_1635433446030](https://user-images.githubusercontent.com/73766205/139292780-5677c5c1-0d23-40fa-adfb-fc13f74a56dd.jpg)
 
 ![messageImage_1635433408683](https://user-images.githubusercontent.com/73766205/139292850-9ab64882-45e5-4da5-8da0-6a31a46d9248.jpg)
+
+5. Membuat Water7 sebagai DNS Slave bagi EniesLobby
 
 Water7(Slave)
 
