@@ -30,14 +30,16 @@ Semua terhubung ke Foosha
 ![messageImage_1635433408683](https://user-images.githubusercontent.com/73766205/139292850-9ab64882-45e5-4da5-8da0-6a31a46d9248.jpg)
 
 5. Membuat Water7 sebagai DNS Slave bagi EniesLobby
+6. Subdomain www.mecha.franky.b03.com didelegasikan ke Water7 dengan IP ke Skypie
+7. Subdomain www.general.mecha.franky.b03.com didelegasikan ke Water7 dengan IP ke Skypie
 
 Water7(Slave)
-
-![messageImage_1635433504339](https://user-images.githubusercontent.com/73766205/139294417-1040a747-7fe8-4ecf-a909-1b570e83d9ba.jpg)
 
 ![messageImage_1635433520421](https://user-images.githubusercontent.com/73766205/139294426-41088a3f-363e-4674-9b09-8788634c2d09.jpg)
 
 ![messageImage_1635433477879](https://user-images.githubusercontent.com/73766205/139294431-714844cb-331b-4618-8505-45575be57c21.jpg)
+
+![messageImage_1635433504339](https://user-images.githubusercontent.com/73766205/139294417-1040a747-7fe8-4ecf-a909-1b570e83d9ba.jpg)
 
 
 ## Soal 8
