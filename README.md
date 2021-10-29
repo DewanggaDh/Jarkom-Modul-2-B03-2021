@@ -44,7 +44,7 @@ Masing-masing konfigurasi IP server diisikan dengan kodingan berikut :
 ```
 auto eth0
 iface eth0 inet static
-	address 192.178.[Nomor switch].[Urutan server dari kiri ke kanan untuk masing-masing switch]
+	address 192.178.[Nomor switch].[Urutan server dari kiri ke kanan untuk masing-masing switch + 1]
 	netmask 255.255.255.0
 	gateway 192.178.[Nomor switch].1
 ```
@@ -65,9 +65,85 @@ echo nameserver 192.168.122.1 > /etc/resolv.conf
 ```
 Command-command tersebut akan dimasukkan dalam script.sh di dalam Foosha tersebut, yang nanti-nya akan di bash setiap akan dimulai.
 
-2. Membuat situs domain www.franky.b03.com
-3. Membuat subdomain www.super.franky.b03.com
+Selanjutnya, untuk masing-masing server, dari Loguetown ke Skypie, dibuatkan script.sh berisikan :
+
+```
+echo nameserver 192.168.122.1 > /etc/resolv.conf
+apt-get update
+apt-get install bind9 -y
+apt-get update
+apt-get install dnsutils-y
+apt-get update
+```
+
+2. Membuat situs domain franky.b03.com dengan alias www.franky.b03.com di dalam folder kaizoku di EniesLobby (DNS utama)
+
+Di dalam EniesLobby, dibukakan /etc/bind/named.conf.local lalu diisikan program berikut :
+
+```
+zone "franky.b03.com" {
+	type master;
+	file "/etc/bind/kaizoku/franky.b03.com";
+};
+```
+
+Lalu dibuatkan folder kaizoku dan file franky.b03.com di dalamnya. Setelah itu dibuka file yang baru saja dibuat.
+```
+mkdir /etc/bind/kaizoku
+cp /etc/bind/db.local /etc/bind/kaizoku/franky.b03.com
+nano /etc/bind/kaizoku/franky.b03.com
+```
+
+Di dalam file franky.b03.com, localhost digantikan menjadi franky.b03.com, IP di A digantikan menjadi IP EniesLobby (192.178.2.2), dan ditambahkan satu baris untuk menambahkan CNAME www.franky.b03.com untuk franky.b03.com
+
+(Foto paste here)
+
+Kemudian, di web console EniesLobby, dimasukkan command named -g untuk mengecek kesalahan. Jika semua kesalahan sudah diselesaikan, bisa dimasukkan command service bind9 restart.
+
+(Foto paste here)
+
+Karena menjadi client, nameserver di /etc/resolv.conf di Loguetown dan Alabasta diganti menjadi IP EniesLobby.
+
+(Foto here again)
+
+Lalu, di web console masing-masing, dilakukan ping franky.b03.com dan www.franky.b03.com
+
+(Foto again)
+
+3. Membuat subdomain super.franky.b03.com dengan alias www.super.franky.b03.com ke Skypie
+
+Di buka lagi file franky.b03.com di EniesLobby. Di bawah sendiri ditambahkan kode :
+```
+super	IN	A	192.178.2.4; (IP Skypie)
+```
+
+Setelah itu, dilakukan restart bind di EniesLobby.
+
+Lalu, di Loguetown dicoba memasukkan command ping super.franky.b03.com dan host -t A www.super.franky.b03.com
+
+(Foto)
+
 4. Membuat reverse domain utama
+
+Di dalam named.conf.local di dalam EniesLobby, ditambahkan fungsi zona "2.178.192.in-addr-arpa", yang mana merupakan kebalikan dari IP EniesLobby :
+```
+zone "2.178.192.in-addr.arpa" {
+    type master;
+    file "/etc/bind/kaizoku/2.178.192.in-addr.arpa";
+};
+```
+
+Dimasukkan command berikut untuk membuat dan membuka file 2.178.192.in-addr.arpa
+```
+cp /etc/bind/db.local /etc/kaizoku/2.178.192.in-addr.arpa
+nano /etc/bind/kaizoku/2.178.192.in-addr.arpa
+```
+
+Selain mengganti localhost menjadi franky.b03.com, dua baris dibawahnya dimasukkan kode :
+```
+2.178.192.in-addr.arpa	IN	NS	franky.b03.com
+2	IN	PTR	franky.b03.com
+```
 
 ### EniesLobby
 
