@@ -117,7 +117,7 @@ Di buka lagi file franky.b03.com di EniesLobby. Di bawah sendiri ditambahkan kod
 super	IN	A	192.178.2.4; (IP Skypie)
 ```
 
-Setelah itu, dilakukan restart bind di EniesLobby.
+Setelah itu, dilakukan named -g dan restart bind di EniesLobby.
 
 Lalu, di Loguetown dicoba memasukkan command ping super.franky.b03.com dan host -t A www.super.franky.b03.com
 
@@ -144,6 +144,10 @@ Selain mengganti localhost menjadi franky.b03.com, dua baris dibawahnya dimasukk
 2.178.192.in-addr.arpa	IN	NS	franky.b03.com
 2	IN	PTR	franky.b03.com
 ```
+
+Satu named -g dan restart bind kemudian. Di Loguetown, masukkan command host -t PTR 192.178.2.2
+
+(Foto)
 
 ### EniesLobby
 
