@@ -49,10 +49,21 @@ iface eth0 inet static
 	gateway 192.178.[Nomor switch].1
 ```
 
+Lalu, semua node dinyalakan sampai hubungannya berwarna merah.
+
 Di dalam Foosha dibuka web console untuk menyalakan telnet dengan memasukkan :
 ```
-telnet
+telnet 192.168.0.3 5000
 ```
+Lalu mematikannya dengen CTRL+] jika berhasil.
+
+Berikutnya, di dalam web console Foosha dimasukkan beberapa command :
+```
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 192.178.0.0/16
+cat /etc/resolv.conf
+echo nameserver 192.168.122.1 > /etc/resolv.conf
+```
+Command-command tersebut akan dimasukkan dalam script.sh di dalam Foosha tersebut, yang nanti-nya akan di bash setiap akan dimulai.
 
 2. Membuat situs domain www.franky.b03.com
 3. Membuat subdomain www.super.franky.b03.com
