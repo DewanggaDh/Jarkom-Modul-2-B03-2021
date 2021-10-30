@@ -274,3 +274,5 @@ Pada saat melakukan restart apache2, muncul pesan ini yang tidak diketahui alasa
 9. Mengubah www.franky.b03.com/index.php./home menjadi www.franky.b03.com/home
 
 Pertama mendownload php 
+
+Menggunakan Alias pada Virtual Host
