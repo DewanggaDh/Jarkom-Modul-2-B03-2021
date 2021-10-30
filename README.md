@@ -270,8 +270,9 @@ Setelah itu dilakukan penginstallan apache2 dan php pada Skypie.
 
 ```
 apt-get update
-apt-get install php
-apt-get install apache2
+apt-get install php -y
+apt-get install apache2 -y
+apt-get install libapache2-mod-php7.0 -y
 ```
 
 Lalu, pada Server Skypie, dibuatkan file conf apache2 untuk franky.b03.com dengan cara berikut.
