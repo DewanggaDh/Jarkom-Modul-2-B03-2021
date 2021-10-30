@@ -284,6 +284,24 @@ Lalu dengan nano diubah dan ditambahi bagian berikut.
 
 ![image](https://user-images.githubusercontent.com/16128257/139560833-39c036f1-7f95-40a9-855b-a27c98199c0e.png)
 
+Pada command diatas kita menggunakan folder `/var/www/franky.b03.com` sebagai directory server. Untuk itu kita buat folder-nya dan atau langsung ambil data dummy dari github yang telah disediakan lalu rename folder-nya menjadi franky.b03.com.
+
+Pertama kita install `wget` dan `unzip` juga untuk download dan extract file dari github yang telah disediakan.
+
+```
+apt-get install wget -y
+apt-get install unzip -y
+```
+
+```
+cd /var/www
+wget https://github.com/FeinardSlim/Praktikum-Modul-2-Jarkom/raw/main/franky.zip
+unzip franky.zip
+mv franky franky.b03.com
+```
+
+![image](https://user-images.githubusercontent.com/16128257/139561120-dd2dca4d-9de7-4acf-981d-a1c2b9b5fe15.png)
+
 Lalu aktifkan konfigurasi apache franky.b03.com.conf menggunakan command berikut.
 
 ```
@@ -295,3 +313,16 @@ Setelah itu restart apache2 nya.
 ```
 service apache2 restart
 ```
+
+Lalu pada client Loguetown atau Alabasta install Lynx atau curl. Namun kami akan coba menggunakan curl.
+
+```
+apt-get update
+apt-get install curl
+```
+
+Lalu visit franky.b03.com dan www.franky.b03.com dengan menggunakan curl dan lihat hal yang terjadi.
+
+![image](https://user-images.githubusercontent.com/16128257/139561136-33041024-8650-4a04-a3af-fa3e6d2df742.png)
+
+Dapat dilihat bahwa curl success mengembalikan data pada server Skypie yang telah di-konfigurasikan.
