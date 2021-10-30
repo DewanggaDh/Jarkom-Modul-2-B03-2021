@@ -71,10 +71,15 @@ Skypie :
 
 Lalu, semua node dinyalakan sampai hubungannya berwarna merah.
 
-Di dalam Foosha dibuka web console untuk menyalakan telnet dengan memasukkan :
+Di dalam Foosha dibuka web console untuk menyalakan telnet dengan memasukkan tulisa di kanan layout GNS3:
+
+![image](https://user-images.githubusercontent.com/73766205/139516675-82047603-271e-46e0-b068-90bedc71691f.png)
 ```
 telnet 192.168.0.3 5000
 ```
+![image](https://user-images.githubusercontent.com/73766205/139516702-7a210e4d-1f06-441f-b244-1d97e9ae3d49.png)
+![image](https://user-images.githubusercontent.com/73766205/139516719-8149a0bf-36b3-4b1b-b8b9-22360e6f95be.png)
+
 Lalu mematikannya dengen CTRL+] jika berhasil.
 
 Berikutnya, di dalam web console Foosha dimasukkan beberapa command :
