@@ -211,9 +211,41 @@ Setelah itu, di ping franky.b03.com di Loguetown
 
 6. Buat Subdomain www.mecha.franky.b03.com yang didelegasikan ke Water7 dengan IP ke Skypie
 
+Pertama dibuka file franky.b03.com di EniesLobby dan dibawahnya diisi dengan kode :
+```
+ns1	IN	A	192.178.2.3; (Water7)
+mecha	IN	NS	ns1
+www.mecha	IN	CNAME	mecha.franky.b03.com
+```
 
+![image](https://user-images.githubusercontent.com/73766205/139520952-8db179c1-deee-4a83-a27f-626600c0aa23.png)
+
+Lalu buka file named.conf.options, baik di EniesLobby dan Water7, dan dibuah pada bagian ini sebelum bind9 di-restart :
+
+![image](https://user-images.githubusercontent.com/73766205/139521002-1b97868e-36f3-4489-b3f0-57c8ad8ea284.png)
+
+Di server Water7, diedit named.conf.local sehingga menjadi master dan berisikan file franky.b03.com
+
+![image](https://user-images.githubusercontent.com/73766205/139521123-e8ef364a-eb3a-473c-9ed6-3f881f4e234f.png)
+
+Lalu dibuatkan file mecha.franky.b03.com di folder sunnygo di Water7 dan diedit dengan mecha.franky.b03.com dan ditambahkan IP Skypie dan alias www.mecha.franky.b03.com
+
+![image](https://user-images.githubusercontent.com/73766205/139521285-eaed00f0-d61f-4060-93b1-fd3ff0029d3c.png)
+
+Lalu bind9 di Water7 di-restart lalu dicoba ping di Loguetown
+
+![image](https://user-images.githubusercontent.com/73766205/139521359-ad0a3406-b8be-493f-83dd-f1ea0ba9c660.png)
 
 7. Buat Subdomain www.general.mecha.franky.b03.com melalui Water7 yang mengarah ke Skypie
+
+Di Water7, di file mecha.franky.b03.com, ditambahkan kode sebagai berikut :
+
+![image](https://user-images.githubusercontent.com/73766205/139521453-4202adc1-5ede-4b22-98c9-3b3623251252.png)
+
+Lalu setelah di restart, di coba ping di Loguetown :
+
+![image](https://user-images.githubusercontent.com/73766205/139521468-4f724c90-9a60-4be8-8510-57762c0963ab.png)
+
 
 Water7(Slave)
 
