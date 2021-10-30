@@ -255,5 +255,19 @@ Water7(Slave)
 
 ![messageImage_1635433504339](https://user-images.githubusercontent.com/73766205/139294417-1040a747-7fe8-4ecf-a909-1b570e83d9ba.jpg)
 
+8. Membuat webserver dengan DocumentRoot pada /var/www/franky.b03.com
 
-## Soal 8
+Dilakukan penginstallan Lynx di server client dan apache2 di EniesLobby
+
+![image](https://user-images.githubusercontent.com/73766205/139526372-a292098b-ff7f-4286-90cb-47a75e0c35f8.png)
+
+![image](https://user-images.githubusercontent.com/73766205/139526520-b5b9437f-14bd-4b6e-a6ed-98d1f7dbb79c.png)
+
+Lalu, di EniesLobby, dibuatkan file conf apache2 untuk franky.b03.com lalu diubah pada bagian ini :
+
+![image](https://user-images.githubusercontent.com/73766205/139526728-a5f0fc99-2c5b-4015-b5b6-374602df6e0b.png)
+
+Pada saat melakukan restart apache2, muncul pesan ini yang tidak diketahui alasannya
+
+![image](https://user-images.githubusercontent.com/73766205/139527126-84c1bd08-c667-4c12-9dbc-02b732aea6fd.png)
+
