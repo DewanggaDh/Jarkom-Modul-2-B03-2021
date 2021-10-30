@@ -7,7 +7,7 @@ Nama Anggota :
 
 ## Soal-soal
 
-1. Membuat peta topologi yang menghubungkan berbagai server ke Foosha melaui switch tertentu
+### 1. Membuat peta topologi yang menghubungkan berbagai server ke Foosha melaui switch tertentu
 
 DNS Master : EniesLobby
 
@@ -107,7 +107,7 @@ apt-get update
 
 ![image](https://user-images.githubusercontent.com/73766205/139517790-847625ff-0d4f-4ca5-a424-2a9f6eef7c35.png)
 
-2. Membuat situs domain franky.b03.com dengan alias www.franky.b03.com di dalam folder kaizoku di EniesLobby (DNS utama)
+### 2. Membuat situs domain franky.b03.com dengan alias www.franky.b03.com di dalam folder kaizoku di EniesLobby (DNS utama)
 
 Di dalam EniesLobby, dibukakan /etc/bind/named.conf.local lalu diisikan program berikut :
 
@@ -147,7 +147,7 @@ Lalu, di web console masing-masing, dilakukan ping franky.b03.com dan www.franky
 
 (foto
 
-3. Membuat subdomain super.franky.b03.com dengan alias www.super.franky.b03.com ke Skypie
+### 3. Membuat subdomain super.franky.b03.com dengan alias www.super.franky.b03.com ke Skypie
 
 Di buka lagi file franky.b03.com di EniesLobby. Di bawah sendiri ditambahkan kode :
 ```
@@ -162,7 +162,7 @@ Lalu, di Loguetown dicoba memasukkan command ping super.franky.b03.com dan www.s
 
 ![image](https://user-images.githubusercontent.com/73766205/139518523-0d1271f9-af78-4d8f-a500-d995e635e86e.png)
 
-4. Membuat reverse domain utama
+### 4. Membuat reverse domain utama
 
 Di dalam named.conf.local di dalam EniesLobby, ditambahkan fungsi zona "2.178.192.in-addr-arpa", yang mana merupakan kebalikan dari IP EniesLobby :
 ```
@@ -189,7 +189,7 @@ Satu named -g dan restart bind kemudian. Di Loguetown, masukkan command host -t 
 
 ![image](https://user-images.githubusercontent.com/73766205/139518573-5a99b850-bce6-4aaf-9816-5dba41f6e231.png)
 
-5. Membuat Water7 sebagai DNS Slave bagi EniesLobby
+### 5. Membuat Water7 sebagai DNS Slave bagi EniesLobby
 
 Di dalam Water7, dibuka named.conf.local lalu diisikan dengan kode berikut :
 
@@ -209,7 +209,7 @@ Setelah itu, di ping franky.b03.com di Loguetown
 
 ![image](https://user-images.githubusercontent.com/73766205/139519397-e94144b1-9aae-4cc4-8550-ee9faa6e1c77.png)
 
-6. Buat Subdomain www.mecha.franky.b03.com yang didelegasikan ke Water7 dengan IP ke Skypie
+### 6. Buat Subdomain www.mecha.franky.b03.com yang didelegasikan ke Water7 dengan IP ke Skypie
 
 Pertama dibuka file franky.b03.com di EniesLobby dan dibawahnya diisi dengan kode :
 ```
@@ -236,24 +236,21 @@ Lalu bind9 di Water7 di-restart lalu dicoba ping di Loguetown
 
 ![image](https://user-images.githubusercontent.com/73766205/139521359-ad0a3406-b8be-493f-83dd-f1ea0ba9c660.png)
 
-7. Buat Subdomain www.general.mecha.franky.b03.com melalui Water7 yang mengarah ke Skypie
+### 7. Buat Subdomain www.general.mecha.franky.b03.com melalui Water7 yang mengarah ke Skypie
 
 Di Water7, di file mecha.franky.b03.com, ditambahkan kode sebagai berikut :
 
 ![image](https://user-images.githubusercontent.com/73766205/139521453-4202adc1-5ede-4b22-98c9-3b3623251252.png)
 
-Lalu setelah di restart, di coba ping di Loguetown :
+Setelah itu restart bind9 nya menggunakan command berikut:
+
+```
+service bind9 restart
+```
+
+Setelah di restart, coba ping melalui Loguetown :
 
 ![image](https://user-images.githubusercontent.com/73766205/139521468-4f724c90-9a60-4be8-8510-57762c0963ab.png)
-
-
-Water7(Slave)
-
-![messageImage_1635433520421](https://user-images.githubusercontent.com/73766205/139294426-41088a3f-363e-4674-9b09-8788634c2d09.jpg)
-
-![messageImage_1635433477879](https://user-images.githubusercontent.com/73766205/139294431-714844cb-331b-4618-8505-45575be57c21.jpg)
-
-![messageImage_1635433504339](https://user-images.githubusercontent.com/73766205/139294417-1040a747-7fe8-4ecf-a909-1b570e83d9ba.jpg)
 
 8. Membuat webserver dengan DocumentRoot pada /var/www/franky.b03.com
 
@@ -273,6 +270,6 @@ Pada saat melakukan restart apache2, muncul pesan ini yang tidak diketahui alasa
 
 9. Mengubah www.franky.b03.com/index.php./home menjadi www.franky.b03.com/home
 
-Pertama mendownload php 
+Pertama mendownload php
 
 Menggunakan Alias pada Virtual Host
