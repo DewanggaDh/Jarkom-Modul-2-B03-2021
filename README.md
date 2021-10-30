@@ -5,7 +5,7 @@ Nama Anggota :
 2. Dewangga Dharmawan (05111940000029)
 3. Ahmad Syafiq Aqil Wafi (05111940000089)
 
-## Soal 1 - 7
+## Soal-soal
 
 1. Membuat peta topologi yang menghubungkan berbagai server ke Foosha melaui switch tertentu
 
@@ -271,3 +271,6 @@ Pada saat melakukan restart apache2, muncul pesan ini yang tidak diketahui alasa
 
 ![image](https://user-images.githubusercontent.com/73766205/139527126-84c1bd08-c667-4c12-9dbc-02b732aea6fd.png)
 
+9. Mengubah www.franky.b03.com/index.php./home menjadi www.franky.b03.com/home
+
+Pertama mendownload php 
