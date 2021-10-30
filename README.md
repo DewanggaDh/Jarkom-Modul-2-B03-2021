@@ -35,8 +35,9 @@ auto eth2
 iface eth2 inet static
 	address 192.178.2.1
 	netmask 255.255.255.0
-(Atau nanti dipotong gambarnya habis ini)
 ```
+![image](https://user-images.githubusercontent.com/73766205/139516517-7dd03513-de2f-49d9-a121-841c9636735e.png)
+
 
 Lalu, ada dua switch yang dihubungkan ke Foosha. Masing-masing switch dipasang beberapa server. Switch di kiri dipasang server Loguetown dan Alabasta, yang merupakan server client, sedangkan switch di kanan dipasang server EniesLobby (DNS master), Water7 (DNS slave), dan Skypie (Web server).
 
@@ -48,6 +49,25 @@ iface eth0 inet static
 	netmask 255.255.255.0
 	gateway 192.178.[Nomor switch].1
 ```
+Loguetown :
+
+![image](https://user-images.githubusercontent.com/73766205/139516575-05f63ff0-7027-43ca-a774-76d09b296f20.png)
+
+Alabasta :
+
+![image](https://user-images.githubusercontent.com/73766205/139516592-92ca9001-9d0f-40d4-ab71-2ca8360b5475.png)
+
+EniesLobby :
+
+![image](https://user-images.githubusercontent.com/73766205/139516606-d56f4e70-8db8-45f4-9289-6df0f4ca3113.png)
+
+Water7 :
+
+![image](https://user-images.githubusercontent.com/73766205/139516617-6d691806-7f22-4f00-9d5f-005741c05442.png)
+
+Skypie :
+
+![image](https://user-images.githubusercontent.com/73766205/139516631-355cafde-e582-4bb4-bba0-748f78a0cffc.png)
 
 Lalu, semua node dinyalakan sampai hubungannya berwarna merah.
 
