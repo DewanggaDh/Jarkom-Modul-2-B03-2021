@@ -78,6 +78,7 @@ Di dalam Foosha dibuka web console untuk menyalakan telnet dengan memasukkan tul
 telnet 192.168.0.3 5000
 ```
 ![image](https://user-images.githubusercontent.com/73766205/139516702-7a210e4d-1f06-441f-b244-1d97e9ae3d49.png)
+
 ![image](https://user-images.githubusercontent.com/73766205/139516719-8149a0bf-36b3-4b1b-b8b9-22360e6f95be.png)
 
 Lalu mematikannya dengen CTRL+] jika berhasil.
@@ -88,6 +89,9 @@ iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 192.178.0.0/16
 cat /etc/resolv.conf
 echo nameserver 192.168.122.1 > /etc/resolv.conf
 ```
+
+![image](https://user-images.githubusercontent.com/73766205/139517738-566530a4-8ea1-4226-88b7-c4d1fecc09ef.png)
+
 Command-command tersebut akan dimasukkan dalam script.sh di dalam Foosha tersebut, yang nanti-nya akan di bash setiap akan dimulai.
 
 Selanjutnya, untuk masing-masing server, dari Loguetown ke Skypie, dibuatkan script.sh berisikan :
@@ -100,6 +104,8 @@ apt-get update
 apt-get install dnsutils-y
 apt-get update
 ```
+
+![image](https://user-images.githubusercontent.com/73766205/139517790-847625ff-0d4f-4ca5-a424-2a9f6eef7c35.png)
 
 2. Membuat situs domain franky.b03.com dengan alias www.franky.b03.com di dalam folder kaizoku di EniesLobby (DNS utama)
 
