@@ -504,4 +504,22 @@ Lalu visit `general.mecha.franky.b03.com:15000` dan `www.general.mecha.franky.b0
 
 Kendala: Terdapat suatu kendala yaitu dikarenakan suatu hal, port 15000 dan 15500 tidak dapat diketahui dan mengembalikan unknown host. Oleh karena itu screenshot diatas masih menggunakan port 80.
 
+Buka file configuration `/etc/apache2/sites-available/000-default.conf` dengan nano lalu tambahkan block berikut.
 
+![image](https://user-images.githubusercontent.com/16128257/139568752-1dcb6593-b6f1-49b1-b547-621fa5e14c06.png)
+
+Karena file `000-default.conf` di-modifikasi, maka kita perlu melakukan command rewrite conf berikut.
+
+```
+a2enmod rewrite
+```
+
+Setelah itu restart apache2 nya.
+
+```
+service apache2 restart
+```
+
+Lalu visit `192.178.2.4` dengan menggunakan lynx dan amati hal yang terjadi.
+
+![image](https://user-images.githubusercontent.com/16128257/139568814-5338275b-d17f-4cb4-bdea-4d717500afd1.png)
