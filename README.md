@@ -504,6 +504,8 @@ Lalu visit `general.mecha.franky.b03.com:15000` dan `www.general.mecha.franky.b0
 
 Kendala: Terdapat suatu kendala yaitu dikarenakan suatu hal, port 15000 dan 15500 tidak dapat diketahui dan mengembalikan unknown host. Oleh karena itu screenshot diatas masih menggunakan port 80.
 
+ ### 16. Dan setiap kali mengakses IP Skypie akan dialihkan secara otomatis ke www.franky.yyy.com
+
 Buka file configuration `/etc/apache2/sites-available/000-default.conf` dengan nano lalu tambahkan block berikut.
 
 ![image](https://user-images.githubusercontent.com/16128257/139568752-1dcb6593-b6f1-49b1-b547-621fa5e14c06.png)
