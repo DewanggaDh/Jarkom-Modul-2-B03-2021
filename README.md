@@ -382,3 +382,21 @@ service apache2 restart
 Lalu visit super.franky.b03.com dan www.super.franky.b03.com dengan menggunakan curl dan lihat hal yang terjadi.
 
 ![image](https://user-images.githubusercontent.com/16128257/139566692-5533a29a-66db-481c-a3a8-c51bb0183f7b.png)
+
+### 11. Akan tetapi, pada folder /public, Luffy ingin hanya dapat melakukan directory listing saja.
+
+Buka file configuration `/etc/apache2/sites-available/super.franky.b03.com` dengan nano lalu tambahkan block berikut.
+
+![image](https://user-images.githubusercontent.com/16128257/139567116-0f0d26ba-4029-46a0-8709-d53635dd1296.png)
+
+Setelah itu restart apache2 nya.
+
+```
+service apache2 restart
+```
+
+Lalu visit `super.franky.b03.com/public` dan `www.super.franky.b03.com/public` dengan menggunakan lynx dan amati hal yang terjadi.
+
+![image](https://user-images.githubusercontent.com/16128257/139567147-7f5978de-e171-44d4-a735-a644551f6eaa.png)
+
+Selain pada directory /public maka access akan forbidden.
