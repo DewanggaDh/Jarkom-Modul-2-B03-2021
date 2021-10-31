@@ -327,3 +327,22 @@ Lalu visit franky.b03.com dan www.franky.b03.com dengan menggunakan curl dan lih
 ![image](https://user-images.githubusercontent.com/16128257/139561136-33041024-8650-4a04-a3af-fa3e6d2df742.png)
 
 Dapat dilihat bahwa curl success mengembalikan data pada server Skypie yang telah di-konfigurasikan.
+
+### 9. Mengubah www.franky.b03.com/index.php./home menjadi www.franky.b03.com/home
+
+Hal ini dapat diselesaikan dengan menggunakan Alias pada franky.b03.com.conf pada web server Skypie.
+
+Pada `/etc/apache2/sites-available/franky.b03.com.conf` tambahkan line berikut.
+
+![image](https://user-images.githubusercontent.com/16128257/139566214-19dc682f-71c7-436f-94ce-a954a3be959a.png)
+
+Setelah itu restart apache2 nya.
+
+```
+service apache2 restart
+```
+
+Lalu gunakan curl pada client Loguetown atau Alabasta dan visit `franky.b03.com` dan `www.franky.b03.com`.
+
+![image](https://user-images.githubusercontent.com/16128257/139566291-defaa76b-2a3c-4f17-85a0-98ddf0d7724c.png)
+
