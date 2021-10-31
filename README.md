@@ -416,3 +416,19 @@ service apache2 restart
 Lalu visit `super.franky.b03.com/public/gaada` dan `www.super.franky.b03.com/public/gaada` dengan menggunakan lynx dan amati hal yang terjadi.
 
 ![image](https://user-images.githubusercontent.com/16128257/139567294-899f396e-0c9f-4ca9-b323-baf576ae2394.png)
+
+### 13. Luffy juga meminta Nami untuk dibuatkan konfigurasi virtual host. Virtual host ini bertujuan untuk dapat mengakses file asset www.super.franky.yyy.com/public/js menjadi www.super.franky.yyy.com/js.
+
+Buka file configuration `/etc/apache2/sites-available/super.franky.b03.com` dengan nano lalu tambahkan line berikut.
+
+![image](https://user-images.githubusercontent.com/16128257/139567350-9669b5d8-398e-4a09-9bf6-615b42ef913f.png)
+
+Setelah itu restart apache2 nya.
+
+```
+service apache2 restart
+```
+
+Lalu visit `super.franky.b03.com/js` dan `www.super.franky.b03.com/js` dengan menggunakan lynx dan amati hal yang terjadi.
+
+![image](https://user-images.githubusercontent.com/16128257/139567387-1ee8f1c7-93a6-4b3f-9cef-6a21b4078805.png)
