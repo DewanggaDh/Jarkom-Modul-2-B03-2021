@@ -432,3 +432,42 @@ service apache2 restart
 Lalu visit `super.franky.b03.com/js` dan `www.super.franky.b03.com/js` dengan menggunakan lynx dan amati hal yang terjadi.
 
 ![image](https://user-images.githubusercontent.com/16128257/139567387-1ee8f1c7-93a6-4b3f-9cef-6a21b4078805.png)
+
+### 14. Dan Luffy meminta untuk web www.general.mecha.franky.yyy.com hanya bisa diakses dengan port 15000 dan port 15500
+
+Pertama buat file configuration apache2 baru untuk subdomain `general.mecha.franky.b03.com` dengan command berikut.
+
+```
+cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/general.mecha.franky.b03.com.conf
+```
+
+Setelah itu, dengan nano kita modifikasi isi file-nya seperti berikut ini.
+
+![image](https://user-images.githubusercontent.com/16128257/139567926-04b785bd-aed4-4067-aa14-41935a6100ff.png)
+
+Kemudian dengan menggunakan `wget`, kita download file yang telah disediakan dari github dan extract menggunakan `unzip`.
+
+```
+cd /var/www
+wget https://github.com/FeinardSlim/Praktikum-Modul-2-Jarkom/raw/main/general.mecha.franky.zip
+unzip general.mecha.franky.zip
+mv general.mecha.franky general.mecha.franky.b03.com
+```
+
+Lalu aktifkan konfigurasi apache `general.mecha.franky.b03.com.conf` menggunakan command berikut.
+
+```
+a2ensite general.mecha.franky.b03.com
+```
+
+Setelah itu restart apache2 nya.
+
+```
+service apache2 restart
+```
+
+Lalu visit `general.mecha.franky.b03.com:15000` dan `www.general.mecha.franky.b03.com:15000` dan `general.mecha.franky.b03.com:15500` dan `www.general.mecha.franky.b03.com:15500` dengan menggunakan lynx dan amati hal yang terjadi.
+
+![image](https://user-images.githubusercontent.com/16128257/139568120-f4c47260-8999-4efd-bb70-2acca46d52d1.png)
+
+Kendala: Terdapat suatu kendala yaitu dikarenakan suatu hal, port 15000 dan 15500 tidak dapat diketahui dan mengembalikan unknown host. Oleh karena itu screenshot diatas masih menggunakan port 80.
