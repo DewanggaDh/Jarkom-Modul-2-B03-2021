@@ -523,3 +523,37 @@ service apache2 restart
 Lalu visit `192.178.2.4` dengan menggunakan lynx dan amati hal yang terjadi.
 
 ![image](https://user-images.githubusercontent.com/16128257/139568814-5338275b-d17f-4cb4-bdea-4d717500afd1.png)
+
+### 17. Dikarenakan Franky juga ingin mengajak temannya untuk dapat menghubunginya melalui website www.super.franky.yyy.com, dan dikarenakan pengunjung web server pasti akan bingung dengan randomnya images yang ada, maka Franky juga meminta untuk mengganti request gambar yang memiliki substring “franky” akan diarahkan menuju franky.png. Maka bantulah Luffy untuk membuat konfigurasi dns dan web server ini!
+
+Buka file configuration `/etc/apache2/sites-available/super.franky.b03.com.conf` dengan nano lalu tambahkan block berikut.
+
+![image](https://user-images.githubusercontent.com/16128257/139569026-bd75daa7-c06c-471a-98cb-1d56951b0b09.png)
+
+Lalu pergi ke folder `super.franky.b03.com` dan buat file `.htaccess`.
+
+```
+cd /var/www/super.franky.b03.com/
+touch .htaccess
+```
+
+Lalu buka `.htaccess` tersebut menggunakan nano dan tambahkan command berikut.
+
+```
+RewriteEngine On
+RewriteCond %{REQUEST_URI} ^/images/(.*)franky(.*)
+RewriteCond %{REQUEST_URI} !/images/franky.png
+RewriteRule /.* http://super.franky.b03.com/images/franky.png [L]
+```
+
+Setelah itu restart apache2 nya.
+
+```
+service apache2 restart
+```
+
+Lalu visit `super.franky.b03.com/images/kadal/unta/frankybetina.jpg` dengan menggunakan lynx dan amati hal yang terjadi.
+
+![image](https://user-images.githubusercontent.com/16128257/139569221-38f1d11f-809d-4dcc-bc94-607be7d11052.png)
+
+![image](https://user-images.githubusercontent.com/16128257/139569230-8061faec-8b7a-4ff8-9d5b-d2d5dc384062.png)
