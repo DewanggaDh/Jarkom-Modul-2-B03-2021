@@ -471,3 +471,37 @@ Lalu visit `general.mecha.franky.b03.com:15000` dan `www.general.mecha.franky.b0
 ![image](https://user-images.githubusercontent.com/16128257/139568120-f4c47260-8999-4efd-bb70-2acca46d52d1.png)
 
 Kendala: Terdapat suatu kendala yaitu dikarenakan suatu hal, port 15000 dan 15500 tidak dapat diketahui dan mengembalikan unknown host. Oleh karena itu screenshot diatas masih menggunakan port 80.
+
+### 15. dengan autentikasi username `luffy` dan password `onepiece` dan file di /var/www/general.mecha.franky.yyy
+
+Buka file configuration `/etc/apache2/sites-available/general.mecha.franky.b03.com` dengan nano lalu tambahkan block berikut.
+
+![image](https://user-images.githubusercontent.com/16128257/139568277-452d87e8-6f25-4081-b980-c896c165192a.png)
+
+Setelah itu jalankan command berikut untuk membuat user `luffy` dan password `onepiece`.
+
+```
+htpasswd -c /etc/apache2/.htpasswd luffy
+```
+
+Lalu saat muncul interpreter setelah command diatas dijalankan, tuliskan `onepiece`.
+
+![image](https://user-images.githubusercontent.com/16128257/139568375-b9dad17a-3d8c-4407-9aa0-fa98b6f5ae2b.png)
+
+Setelah itu restart apache2 nya.
+
+```
+service apache2 restart
+```
+
+Lalu visit `general.mecha.franky.b03.com:15000` dan `www.general.mecha.franky.b03.com:15000` dan `general.mecha.franky.b03.com:15500` dan `www.general.mecha.franky.b03.com:15500` dengan menggunakan lynx dan amati hal yang terjadi.
+
+![image](https://user-images.githubusercontent.com/16128257/139568439-4ddb0aef-0258-4044-af84-64d9d2d04679.png)
+
+![image](https://user-images.githubusercontent.com/16128257/139568447-32f23c52-c797-4194-a892-2de1cde867be.png)
+
+![image](https://user-images.githubusercontent.com/16128257/139568459-ab9dc3fa-79c0-4982-ad8e-e37fafac20da.png)
+
+Kendala: Terdapat suatu kendala yaitu dikarenakan suatu hal, port 15000 dan 15500 tidak dapat diketahui dan mengembalikan unknown host. Oleh karena itu screenshot diatas masih menggunakan port 80.
+
+
