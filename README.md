@@ -400,3 +400,19 @@ Lalu visit `super.franky.b03.com/public` dan `www.super.franky.b03.com/public` d
 ![image](https://user-images.githubusercontent.com/16128257/139567147-7f5978de-e171-44d4-a735-a644551f6eaa.png)
 
 Selain pada directory /public maka access akan forbidden.
+
+### 12. Tidak hanya itu, Luffy juga menyiapkan error file 404.html pada folder /error untuk mengganti error kode pada apache .
+
+Buka file configuration `/etc/apache2/sites-available/super.franky.b03.com` dengan nano lalu tambahkan line berikut.
+
+![image](https://user-images.githubusercontent.com/16128257/139567258-df056275-fdd5-4cb6-9e51-e068d8da3351.png)
+
+Setelah itu restart apache2 nya.
+
+```
+service apache2 restart
+```
+
+Lalu visit `super.franky.b03.com/public/gaada` dan `www.super.franky.b03.com/public/gaada` dengan menggunakan lynx dan amati hal yang terjadi.
+
+![image](https://user-images.githubusercontent.com/16128257/139567294-899f396e-0c9f-4ca9-b323-baf576ae2394.png)
