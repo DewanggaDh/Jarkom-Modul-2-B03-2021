@@ -346,3 +346,39 @@ Lalu gunakan curl pada client Loguetown atau Alabasta dan visit `franky.b03.com`
 
 ![image](https://user-images.githubusercontent.com/16128257/139566291-defaa76b-2a3c-4f17-85a0-98ddf0d7724c.png)
 
+### 10. Setelah itu, pada subdomain www.super.franky.yyy.com, Luffy membutuhkan penyimpanan aset yang memiliki DocumentRoot pada /var/www/super.franky.yyy.com
+
+Pertama buat file configuration apache2 baru untuk subdomain `super.franky.b03.com` dengan command berikut.
+
+```
+cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/super.franky.b03.com.conf
+```
+
+Setelah itu, dengan nano kita modifikasi isi file-nya seperti berikut ini.
+
+![image](https://user-images.githubusercontent.com/16128257/139566541-d7758e79-f676-46f0-a0d0-a560558dd999.png)
+
+Kemudian dengan menggunakan `wget`, kita download file yang telah disediakan dari github dan extract menggunakan `unzip`.
+
+```
+cd /var/www
+wget https://github.com/FeinardSlim/Praktikum-Modul-2-Jarkom/raw/main/super.franky.zip
+unzip super.franky.zip
+mv super.franky super.franky.b03.com
+```
+
+Lalu aktifkan konfigurasi apache super.franky.b03.com.conf menggunakan command berikut.
+
+```
+a2ensite super.franky.b03.com
+```
+
+Setelah itu restart apache2 nya.
+
+```
+service apache2 restart
+```
+
+Lalu visit super.franky.b03.com dan www.super.franky.b03.com dengan menggunakan curl dan lihat hal yang terjadi.
+
+![image](https://user-images.githubusercontent.com/16128257/139566692-5533a29a-66db-481c-a3a8-c51bb0183f7b.png)
